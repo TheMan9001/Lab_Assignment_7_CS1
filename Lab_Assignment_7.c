@@ -36,7 +36,7 @@ int main(){
     int* pointer = numArray;
     int arrLen = 9;
     printf("Current array: \n");
-    printArray(numArray, arrLen);
+    printArray(pointer, arrLen);
     
     //sorts the array and shows amount of swaps used
     bubble_Sort(pointer, arrLen);

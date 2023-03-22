@@ -36,7 +36,7 @@ void bubble_Sort(int* ptr, int n){
             } 
         }
         //shows the amount of swaps used for each run
-        printf("Run #%i: %i\n", (i+1), swaps);
+        printf("Pass #%i: %i\n", (i+1), swaps);
     }
     printf("\n");
 }

@@ -46,16 +46,9 @@ int main(){
     int numArray[] = {97, 16, 45, 63, 13, 22, 7, 58, 72};
     int* pointer = numArray;
     int arrLen = 9;
-    //displays current unsorted array
-    printf("Current array: \n");
-    printArray(pointer, arrLen);
     
     //sorts the array and shows amount of swaps used for each run
     bubble_Sort(pointer, arrLen);
-    
-    //shows the now sorted array
-    printf("Sorted array: \n");
-    printArray(pointer, arrLen);
     
     return 0;
 }

@@ -1,36 +1,39 @@
 #include <stdio.h>
 
-//prints the full array;
-void printArray(int arr[], int size){
-    int i;
-    for (i = 0; i < size; i++){
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
+//swap function used in the bubbleSort algorithm
+void swap(int* num1, int* num2){
+    int temp = *num1;
+    *num1 = *num2;
+    *num2 = temp;
+    
 }
 
 //bubble sort algorithm
 
-//this function sorts the array using bubble sort and prints the amount of 
-//swaps used during each run
+/*
+this function sorts the array using bubble sort and prints the amount of 
+swaps used during each run
+*/
 void bubble_Sort(int* ptr, int n){
     int temp;
     int swaps;
-    //this loop stops one before the last number in the array because
-    //the function compares the current number with the next number in the array
+    /*
+    this loop stops one before the last number (-1 part) in the array because
+    the function compares the current number with the next number in the array
+    */
     printf("\n");
-    for (int i = 0; i < n-1; i++) {
-        //(n-i)-1 is used to stop the function from rechecking numbers 
-        //that are already sorted
-        
+    for (int i = 0; i < n-1; i++) {        
         //sets swaps to 0 at the start of every run
         swaps = 0;
+        /*
+        (n-i) is used to stop the function from rechecking numbers 
+        that are already sorted while the -1 part is used for the same reason mentioned above
+        */
         for (int j = 0; j < (n-i)-1; j++) {
             //if current number is greater than next number then swap numbers
             if (*(ptr + j) > *(ptr + (j+1))) { 
-                temp = *(ptr + (j+1)); 
-                *(ptr + (j+1)) = *(ptr + j); 
-                *(ptr + j) = temp; 
+                //swaps numbers using swap function shown above
+                swap((ptr+(j+1)), (ptr+j));
                 //counts the amount of swaps used
                 swaps++;
             } 
@@ -52,6 +55,7 @@ int main(){
     
     return 0;
 }
+
 
 
 
